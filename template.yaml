@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Blog Build Notifications
+
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  BlogBuildNotificationFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: blog_build_notifications/
+      Handler: app.lambda_handler
+      Runtime: python3.7
+      Environment:
+        Variables:
+          SNS_TOPIC_NAME: 'codebuild_notifications'
+          AWS_ACCID: { "Fn::Join" : ["", [{ "Ref" : "AWS::AccountId" }, "" ]] }
+          AWS_PART: { "Fn::Join" : ["", [{ "Ref" : "AWS::Partition" }, "" ]] }
+      Policies:
+        - SNSPublishMessagePolicy:
+            TopicName: "codebuild_notifications"
+      Events:
+        CloudWatchEvent1:
+          Type: CloudWatchEvent
+          Properties:
+            Pattern:
+              source:
+                - aws.codebuild
+              detail:
+                build-status:
+                  - SUCCEEDED
+                  - FAILED
+                  - STOPPED
+                project-name:
+                  - MendyDrinks
+                  - MendyBlog
+
+Outputs:
+  BlogBuildNotificationFunction:
+    Description: "Blog Build Notifications ARN"
+    Value: !GetAtt BlogBuildNotificationFunction.Arn

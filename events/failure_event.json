@@ -1,0 +1,158 @@
+{
+  "version": "0",
+  "id": "a936fe79-36c0-78fe-75f5-734351469eb8",
+  "detail-type": "CodeBuild Build State Change",
+  "source": "aws.codebuild",
+  "account": "XXXXXXXXXXXX",
+  "time": "2020-04-24T15:56:29Z",
+  "region": "us-east-1",
+  "resources": [
+    "arn:aws:codebuild:us-east-1:XXXXXXXXXXXX:build/MendyDrinks:aaaa-bbb"
+  ],
+  "detail": {
+    "build-status": "FAILED",
+    "project-name": "MendyDrinks",
+    "build-id": "arn:aws:codebuild:us-east-1:XXXXXXXXXXXX:build/MendyDrinks:aaaa-bbb",
+    "additional-information": {
+      "cache": {
+        "type": "NO_CACHE"
+      },
+      "build-number": 16,
+      "timeout-in-minutes": 60,
+      "build-complete": "True",
+      "initiator": "root",
+      "build-start-time": "Apr 24, 2020 3:55:35 PM",
+      "source": {
+        "buildspec": "buildspec.yml",
+        "auth": {
+          "type": "OAUTH"
+        },
+        "location": "https://github.com/mberkow/mendydrinks.git",
+        "type": "GITHUB"
+      },
+      "source-version": "683f4fdb3b077b6734f65043a3032880e19c7c84",
+      "artifact": {
+        "location": ""
+      },
+      "environment": {
+        "image": "aws/codebuild/golang:1.7.3",
+        "privileged-mode": "False",
+        "image-pull-credentials-type": "CODEBUILD",
+        "compute-type": "BUILD_GENERAL1_SMALL",
+        "type": "LINUX_CONTAINER",
+        "environment-variables": [ ]
+      },
+      "logs": {
+        "group-name": "/aws/codebuild/MendyDrinks",
+        "stream-name": "31df65cf-6b9e-42f5-9047-87855431a723",
+        "deep-link": "https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logEvent:group=/aws/codebuild/MendyDrinks;stream=31df65cf-6b9e-42f5-9047-87855431a723"
+      },
+      "phases": [
+        {
+          "phase-context": [],
+          "start-time": "Apr 24, 2020 3:55:35 PM",
+          "end-time": "Apr 24, 2020 3:55:35 PM",
+          "duration-in-seconds": 0,
+          "phase-type": "SUBMITTED",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [],
+          "start-time": "Apr 24, 2020 3:55:35 PM",
+          "end-time": "Apr 24, 2020 3:55:37 PM",
+          "duration-in-seconds": 1,
+          "phase-type": "QUEUED",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [
+            ": "
+          ],
+          "start-time": "Apr 24, 2020 3:55:37 PM",
+          "end-time": "Apr 24, 2020 3:56:19 PM",
+          "duration-in-seconds": 42,
+          "phase-type": "PROVISIONING",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [
+            ": "
+          ],
+          "start-time": "Apr 24, 2020 3:56:19 PM",
+          "end-time": "Apr 24, 2020 3:56:23 PM",
+          "duration-in-seconds": 4,
+          "phase-type": "DOWNLOAD_SOURCE",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [
+            ": "
+          ],
+          "start-time": "Apr 24, 2020 3:56:23 PM",
+          "end-time": "Apr 24, 2020 3:56:24 PM",
+          "duration-in-seconds": 0,
+          "phase-type": "INSTALL",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [
+            ": "
+          ],
+          "start-time": "Apr 24, 2020 3:56:24 PM",
+          "end-time": "Apr 24, 2020 3:56:24 PM",
+          "duration-in-seconds": 0,
+          "phase-type": "PRE_BUILD",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [
+            "COMMAND_EXECUTION_ERROR: Error while executing command: ./build.sh. Reason: exit status 1"
+          ],
+          "start-time": "Apr 24, 2020 3:56:24 PM",
+          "end-time": "Apr 24, 2020 3:56:24 PM",
+          "duration-in-seconds": 0,
+          "phase-type": "BUILD",
+          "phase-status": "FAILED"
+        },
+        {
+          "phase-context": [
+            ": "
+          ],
+          "start-time": "Apr 24, 2020 3:56:24 PM",
+          "end-time": "Apr 24, 2020 3:56:24 PM",
+          "duration-in-seconds": 0,
+          "phase-type": "POST_BUILD",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [
+            ": "
+          ],
+          "start-time": "Apr 24, 2020 3:56:24 PM",
+          "end-time": "Apr 24, 2020 3:56:24 PM",
+          "duration-in-seconds": 0,
+          "phase-type": "UPLOAD_ARTIFACTS",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "phase-context": [
+            ": "
+          ],
+          "start-time": "Apr 24, 2020 3:56:24 PM",
+          "end-time": "Apr 24, 2020 3:56:28 PM",
+          "duration-in-seconds": 4,
+          "phase-type": "FINALIZING",
+          "phase-status": "SUCCEEDED"
+        },
+        {
+          "start-time": "Apr 24, 2020 3:56:28 PM",
+          "phase-type": "COMPLETED"
+        }
+      ],
+      "queued-timeout-in-minutes": 480
+    },
+    "current-phase": "COMPLETED",
+    "current-phase-context": "[: ]",
+    "version": "1"
+  }
+}
